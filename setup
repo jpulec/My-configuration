@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This shell script used to install my preferred environment settings
+
+cp .vimrc .gitconfig ~/
