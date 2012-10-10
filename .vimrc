@@ -1,30 +1,10 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+    autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
+endif
 
-set foldmethod=indent
-set foldlevel=99
+" This beauty remembers where you were the last time you edited the file, and returns to the same position.
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm'\"")|else|exe "norm $"|endif|endif
 
-map <leader>td <Plug>TaskList
-
-syntax on
-filetype on
-filetype plugin indent on
-let g:pyflakes_use_quickfix = 0
-let g:pep8_map='<leader>8'
-
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-
-set completeopt=menuone,longest,preview
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set smarttab
-set expandtab
+" Turn on line numbering
 set number
-let python_highlight_all = 1
-set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-set omnifunc=pythoncomplete#Complete
-inoremap <Nul> <C-x><C-o>
