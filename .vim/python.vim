@@ -8,7 +8,7 @@
 " Used for plugins
 filetype off
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptages()
+call pathogen#helptags()
 
 " Code folding
 set foldmethod=indent
