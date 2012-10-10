@@ -5,6 +5,34 @@
 "
 " Julian Edwards 2008-05-30
 
+" Used for plugins
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptages()
+
+" Code folding
+set foldmethod=indent
+set foldlevel=99
+
+" TaskList Plugin
+map<leader>td <Plug>TaskList
+
+" Syntax
+syntax on
+filetype on
+filetype plugin indent on
+
+" PyFlakes
+let g:pyflakes_use_quickfix = 0
+
+" Pep8
+let g:pep8_map='<leader>8'
+
+" SuperTab
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
 " Wrapping and tabs.
 set tw=78 ts=4 sw=4 sta et sts=4 ai
 
@@ -90,4 +118,3 @@ def RemoveBreakpoints():
 
 vim.command( "map <s-f7> :py RemoveBreakpoints()<cr>")
 EOF
-vim:syntax=vim
