@@ -1,6 +1,6 @@
 filetype off
-call vim-pathogen#runtime_append_all_bundles()
-call vim-pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 set foldmethod=indent
 set foldlevel=99
