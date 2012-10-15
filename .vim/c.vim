@@ -20,7 +20,7 @@ set ci                  "  C/C++ indents
 set cin                 " -
 
 "  ---- C style indent keywords ----
-set cink=0{,0},:,0#,!,o,O,e
+set cink=0{,0},:,0#,o,O,e
 set cinw=if,else,for,do,while,switch
 set cinoptions=:.5s,>1s,p0,t0,(0,g2
 
