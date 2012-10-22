@@ -3,6 +3,7 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
     autocmd BufRead,BufNewFile,FileReadPost makefile source ~/.vim/makefile.vim
     autocmd BufRead,BufNewFile,FileReadPost *.c source ~/.vim/c.vim
+    autocmd BufRead,BufNewFile,FileReadPost *.go source ~/.vim/go.vim
 endif
 
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
