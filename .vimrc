@@ -4,6 +4,8 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost makefile source ~/.vim/makefile.vim
     autocmd BufRead,BufNewFile,FileReadPost *.c source ~/.vim/c.vim
     autocmd BufRead,BufNewFile,FileReadPost *.go source ~/.vim/go.vim
+    autocmd BufRead,BufNewFile,FileReadPost *.html source ~/.vim/html.vim
+    autocmd BufRead,BufNewFile,FileReadPost *.htm source ~/.vim/html.vim
 endif
 
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
