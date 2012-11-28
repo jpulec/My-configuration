@@ -1,4 +1,4 @@
 My-configuration
 ================
 
-All of my config files that to properly setup my programming environment
+All of my config files to properly setup my programming environment
