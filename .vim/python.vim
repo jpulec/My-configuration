@@ -5,25 +5,15 @@
 "
 " Julian Edwards 2008-05-30
 
-" Used for plugins
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " Code folding
 set foldmethod=indent
 set foldlevel=99
 
-" TaskList Plugin
-map<leader>td <Plug>TaskList
-
 " Syntax
 syntax on
 filetype on
 filetype plugin indent on
-
-" PyFlakes
-let g:pyflakes_use_quickfix = 0
 
 " Pep8
 let g:pep8_map='<leader>8'
@@ -61,60 +51,3 @@ set tags+=$HOME/.vim/tags/python24.ctags
 " all errors)
 set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-" Execute a selection of code (very cool!)
-" Use VISUAL to select a range and then hit ctrl-h to execute it.
-python << EOL
-import vim
-def EvaluateCurrentRange():
-    eval(compile('\n'.join(vim.current.range),'','exec'),globals())
-EOL
-map <C-h> :py EvaluateCurrentRange()
-
-" Use F7/Shift-F7 to add/remove a breakpoint (pdb.set_trace)
-" Totally cool.
-python << EOF
-def SetBreakpoint():
-    import re
-    nLine = int( vim.eval( 'line(".")'))
-
-    strLine = vim.current.line
-    strWhite = re.search( '^(\s*)', strLine).group(1)
-
-    vim.current.buffer.append(
-       "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
-         {'space':strWhite, 'mark': '#' * 30}, nLine - 1)
-
-    for strLine in vim.current.buffer:
-        if strLine == "import pdb":
-            break
-    else:
-        vim.current.buffer.append( 'import pdb', 0)
-        vim.command( 'normal j1')
-
-vim.command( 'map <f7> :py SetBreakpoint()<cr>')
-
-def RemoveBreakpoints():
-    import re
-
-    nCurrentLine = int( vim.eval( 'line(".")'))
-
-    nLines = []
-    nLine = 1
-    for strLine in vim.current.buffer:
-        if strLine == "import pdb" or strLine.lstrip()[:15] == "pdb.set_trace()":
-            nLines.append( nLine)
-        nLine += 1
-
-    nLines.reverse()
-
-    for nLine in nLines:
-        vim.command( "normal %dG" % nLine)
-        vim.command( "normal dd")
-        if nLine < nCurrentLine:
-            nCurrentLine -= 1
-
-    vim.command( "normal %dG" % nCurrentLine)
-
-vim.command( "map <s-f7> :py RemoveBreakpoints()<cr>")
-EOF
