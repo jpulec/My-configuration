@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
