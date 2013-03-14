@@ -2,5 +2,5 @@
 
 # This shell script used to install my preferred environment settings
 
-cp .bashrc ~/
+cat .bashrc >> ~/.bashrc
 cp -r .vimrc .gitconfig .vim ~/
