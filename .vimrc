@@ -9,6 +9,7 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost *.js source ~/.vim/javascript.vim
     autocmd BufRead,BufNewFile,FileReadPost *.html source ~/.vim/html.vim
     autocmd BufRead,BufNewFile,FileReadPost *.htm source ~/.vim/html.vim
+    autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 endif
 
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
