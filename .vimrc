@@ -6,7 +6,7 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost makefile source ~/.vim/makefile.vim
     autocmd BufRead,BufNewFile,FileReadPost *.c source ~/.vim/c.vim
     autocmd BufRead,BufNewFile,FileReadPost *.go source ~/.vim/go.vimi
-    autocmd BufRead,BufNewFile,FileReadPost *.js source ~/.vim/javascript.vim
+    autocmd BufRead,BufNewFile,FileReadPost *.js source ~/.vim/js.vim
     autocmd BufRead,BufNewFile,FileReadPost *.html source ~/.vim/html.vim
     autocmd BufRead,BufNewFile,FileReadPost *.htm source ~/.vim/html.vim
     autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
