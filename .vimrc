@@ -47,3 +47,7 @@ set ruler
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" 80 Col wrap and coloring
+set cc=80
+set tw=80
