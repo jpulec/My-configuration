@@ -41,3 +41,5 @@ set cc=80
 set tw=80
 
 let g:syntastic_check_on_open = 1
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
