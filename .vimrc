@@ -1,17 +1,5 @@
 execute pathogen#infect()
 
-if !exists("autocommands_loaded")
-  let autocommands_loaded = 1
-    autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
-    autocmd BufRead,BufNewFile,FileReadPost makefile source ~/.vim/makefile.vim
-    autocmd BufRead,BufNewFile,FileReadPost *.c source ~/.vim/c.vim
-    autocmd BufRead,BufNewFile,FileReadPost *.go source ~/.vim/go.vimi
-    autocmd BufRead,BufNewFile,FileReadPost *.js source ~/.vim/js.vim
-    autocmd BufRead,BufNewFile,FileReadPost *.html source ~/.vim/html.vim
-    autocmd BufRead,BufNewFile,FileReadPost *.htm source ~/.vim/html.vim
-    autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
-endif
-
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm'\"")|else|exe "norm $"|endif|endif
 
@@ -51,3 +39,5 @@ set whichwrap+=<,>,h,l
 " 80 Col wrap and coloring
 set cc=80
 set tw=80
+
+let g:syntastic_check_on_open = 1
