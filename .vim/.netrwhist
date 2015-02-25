@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/james/Sites/niteout.com/src/requirements'
+let g:netrw_dirhist_2='/home/james/Sites/niteout.com/src/niteout/settings'
+let g:netrw_dirhist_3='/home/james/Sites/niteout.com/ansible/roles'
+let g:netrw_dirhist_4='/home/james/Chewse/chewse/ansible/roles/python'
+let g:netrw_dirhist_5='/home/james/Sites/niteout.com/src/plans'
+let g:netrw_dirhist_6='/home/james/Chewse/chewse/chewse/orders/migrations'
+let g:netrw_dirhist_7='/home/james/Sites/niteout.com/src/requirements'

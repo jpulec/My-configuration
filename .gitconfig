@@ -37,3 +37,5 @@
 	st = status
 	df = diff
 	br = branch
+[diff]
+	tool = vimdiff
